@@ -1,0 +1,4 @@
+.venv/
+src/library/library/static/css/bootstrap/
+__pycache__/
+.DS_Store
