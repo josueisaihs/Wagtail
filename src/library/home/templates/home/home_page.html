@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -12,10 +12,11 @@ Delete the line below if you're just getting started and want to remove the welc
 {% endblock extra_css %}
 
 {% block content %}
-
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
-
+{% image self.image original as webp_image %}
+<section>
+    <h1>{{ self.header }}</h1>
+    <p>{{ self.subheader }}</p>
+    <img src="{{ webp_image.url }}" height="auto">
+    <p>{{ self.emphasis_text }}</b></p>
+</section>
 {% endblock content %}
